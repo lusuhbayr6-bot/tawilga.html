@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Гэр Мод — байрны тавилга</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&display=swap&subset=cyrillic" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrap">
+        <header>
+            <a class="logo" href="#">Гэр Мод</a>
+            <nav>
+                <a href="#baraa">Бүтээгдэхүүн</a>
+                <a href="#portfolio">Хийсэн ажлууд</a>
+                <a href="#zahialga">Захиалгаар</a>
+                <a class="keep" href="#holboo">Холбоо барих</a>
+                <button id="themeToggle" class="theme-btn" title="Өнгө солих">🌙</button>
+            </nav>
+        </header>
+
+        <div class="hero">
+            <div>
+                <h1>Таны байранд яг таарсан тавилга</h1>
+                <p>Хэмжилтээс угсралт хүртэл бид хийнэ.</p>
+                <a class="btn" href="#holboo">Үнийн санал авах</a>
+                <a class="btn alt" href="#portfolio">Хийсэн ажил харах</a>
+            </div>
+            <div class="scene" role="img" aria-label="Зочны өрөөний тавилгын дүрслэл">
+                <i class="shelf"></i>
+                <i class="lamp"></i>
+                <i class="sofa"></i>
+                <i class="table"></i>
+                <i class="floor"></i>
+            </div>
+        </div>
+    </div>
+
+    <section id="baraa">
+        <div class="wrap">
+            <h2>Бүтээгдэхүүний чиглэл</h2>
+            <p class="lead">Өрөө бүрт хэрэгтэй тавилга. Үнэ жишээ болно, өөрийнхөөрөө засаарай.</p>
+            <div class="grid">
+                <div class="card">
+                    <span class="tag"></span>
+                    <h3>Зочны өрөө</h3>
+                    <p>Буйдан, ТВ тавиур, ширээ, ном хадгалах тавиур.</p>
+                    <span class="price">₮890,000-аас</span>
+                </div>
+                <div class="card">
+                    <span class="tag"></span>
+                    <h3>Унтлагын өрөө</h3>
+                    <p>Ор, тумб, хувцасны шүүгээ, тольтой тавиур.</p>
+                    <span class="price">₮1,200,000-аас</span>
+                </div>
+                <div class="card">
+                    <span class="tag"></span>
+                    <h3>Гал тогоо</h3>
+                    <p>Гал тогооны шүүгээ, хоолны ширээ, сандал.</p>
+                    <span class="price">₮650,000-аас</span>
+                </div>
+                <div class="card">
+                    <span class="tag"></span>
+                    <h3>Ажлын өрөө</h3>
+                    <p>Ширээ, номын шүүгээ, эргэдэг сандал.</p>
+                    <span class="price">₮420,000-аас</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="wrap">
+            <h2>Хийсэн ажлууд</h2>
+            <p class="lead">Бидний захиалгаар болон бэлэн хийж гүйцэтгэсэн тавилгын зураг. (Зураг дээр дарж эргүүлж үзнэ үү)</p>
+            
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterGallery('all', event)">Бүгд</button>
+                <button class="filter-btn" onclick="filterGallery('kitchen', event)">Гал тогоо</button>
+                <button class="filter-btn" onclick="filterGallery('bedroom', event)">Унтлагын өрөө</button>
+                <button class="filter-btn" onclick="filterGallery('living', event)">Зочны өрөө</button>
+            </div>
+
+            <div class="grid" id="galleryGrid">
+                <div class="portfolio-card" data-category="kitchen">
+                    <div class="card-inner" onclick="flipCard(this)">
+                        <div class="card-front">
+                            <img class="portfolio-img" src="img/photo1.jpg" alt="Гал тогооны тавилга">
+                            <div class="portfolio-info">
+                                <h3>Орчин үеийн гал тогоо</h3>
+                                <p>МДФ & Модон оруулгатай шүүгээ</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Дэлгэрэнгүй мэдээлэл</h3>
+                            <p>Материал: Солонгос МДФ<br>Хугацаа: 7 хоног<br>Баталгаат хугацаа: 3 жил</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-card" data-category="bedroom">
+                    <div class="card-inner" onclick="flipCard(this)">
+                        <div class="card-front">
+                            <img class="portfolio-img" src="img/photo2.jpg" alt="Унтлагын өрөөний тавилга">
+                            <div class="portfolio-info">
+                                <h3>Давхар хувцасны шүүгээтэй ор</h3>
+                                <p>ЛДСП материал</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Дэлгэрэнгүй мэдээлэл</h3>
+                            <p>Материал: Орос ЛДСП<br>Хугацаа: 5 хоног<br>Баталгаат хугацаа: 2 жил</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="living">
+                    <div class="card-inner" onclick="flipCard(this)">
+                        <div class="card-front">
+                            <img class="portfolio-img" src="img/photo3.jpg" alt="Зочны өрөөний тавилга">
+                            <div class="portfolio-info">
+                                <h3>Хананд суулгасан ТВ тавиур</h3>
+                                <p>Байгалийн модон бүтэцтэй</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Дэлгэрэнгүй мэдээлэл</h3>
+                            <p>Материал: Цэвэр мод<br>Хугацаа: 6 хоног<br>Баталгаат хугацаа: 5 жил</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="zahialga">
+        <div class="wrap split">
+            <div>
+                <h2>Захиалгаар хийх</h2>
+                <p class="lead">Өрөө жижиг, хэлбэр нь хачин байвал бэлэн тавилга таардаггүй. Бид таны хэмжээнд яг тааруулж хийнэ: орцны шүүгээ, хананд суулгасан шүүгээ, гал тогоо гэх мэт.</p>
+                <p class="lead">Материал: ЛДСП, МДФ, мод. Өнгө, бариулыг та сонгоно.</p>
+            </div>
+            <ol class="steps">
+                <li>
+                    <b>Хэмжилт хийнэ</b>
+                    <span>Манай мастер таны байранд ирж хэмжээ авна.</span>
+                </li>
+                <li>
+                    <b>Зураг, үнэ гаргана</b>
+                    <span>3D зураг болон нарийвчилсан үнийн санал өгнө.</span>
+                </li>
+                <li>
+                    <b>Угсарч өгнө</b>
+                    <span>Хүргэлт, угсралтыг бид хариуцна.</span>
+                </li>
+            </ol>
+        </div>
+    </section>
+<!-- Section-ka Form-ka -->
+<section id="holboo">
+    <div class="wrap split">
+        <div>
+            <h2>Холбоо барих</h2>
+            <p class="lead">Хүссэн тавилгаа бичээд илгээнэ үү. Бид тантай утсаар холбогдоно.</p>
+            <p>
+                <b>Утас:</b> 90929681<br>
+                <b>Хаяг:</b> Улаанбаатар, Баянзүрх дүүрэг<br>
+                <b>Цаг:</b> Даваа–Бямба, 10:00–19:00
+            </p>
+        </div>
+        
+        <!-- Formspree-ga xiriirsan -->
+        <form id="f" action="https://formspree.io/f/myeeprgg" method="POST">
+            <label>Нэр
+                <input name="name" required placeholder="Таны нэр">
+            </label>
+            <label>Утас
+                <input name="phone" type="tel" required placeholder="УPhone-kaaga">
+            </label>
+            <label>Нэмэлт мэдээлэл
+                <textarea name="message" rows="3" placeholder="Жишээ: 2 өрөө байр, хувцасны шүүгээ"></textarea>
+            </label>
+            <button class="btn" type="submit">Хүсэлт илгээх</button>
+            <div id="out" role="status"></div>
+        </form>
+    </div>
+</section>
+
+<!-- JavaScript-ka foomka maamulaya -->
+<script>
+    document.getElementById('f').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var form = e.target;
+        var data = new FormData(form);
+        var out = document.getElementById('out');
+        var button = form.querySelector('button[type="submit"]');
+
+        // Batoonka beddel marka uu dirayo
+        button.disabled = true;
+        button.textContent = 'Илгээж байна...';
+
+        fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            out.style.display = 'block';
+            if (response.ok) {
+                out.style.borderColor = 'var(--wood)';
+                out.style.color = 'var(--ink)';
+                out.textContent = 'Баярлалаа! Таны хүсэлтийг хүлээн авлаа. Бид тантай удахгүй холбогдох болно.';
+                form.reset();
+            } else {
+                out.style.borderColor = 'red';
+                out.style.color = 'red';
+                out.textContent = 'Алдаа гарлаа. Та дахин оролдоно уу.';
+            }
+        }).catch(error => {
+            out.style.display = 'block';
+            out.style.borderColor = 'red';
+            out.style.color = 'red';
+            out.textContent = 'Холболтын алдаа гарлаа. Дахин оролдоно уу.';
+        }).finally(() => {
+            button.disabled = false;
+            button.textContent = 'Хүсэлт илгээх';
+        });
+    });
+</script>
+   
+    <footer>
+        <div class="wrap">
+            <span>© 2026 BABI MEBEL</span>
+            <span>Байрны тавилга: зарна, захиалгаар хийнэ</span>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const rootElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            rootElement.setAttribute('data-theme', savedTheme);
+            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            let currentTheme = rootElement.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                rootElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeToggle.textContent = '🌙';
+            } else {
+                rootElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.textContent = '☀️';
+            }
+        });
+
+        document.getElementById('f').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var d = new FormData(e.target);
+            var o = document.getElementById('out');
+            
+            o.style.display = 'block';
+            o.textContent = 'Баярлалаа, ' + d.get('n') + '!\nУтас: ' + d.get('p') + '\nМэдээлэл: ' + (d.get('m') || 'Хоосон') + '\n\nБид тантай удахгүй холбогдоно.';
+        });
+
+        function filterGallery(category, event) {
+            var cards = document.querySelectorAll('.portfolio-card');
+            var buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+
+            event.target.classList.add('active');
+
+            cards.forEach(function(card) {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function flipCard(cardElement) {
+            cardElement.classList.toggle('is-flipped');
+        }
+    </script>
+</body>
+</html>
